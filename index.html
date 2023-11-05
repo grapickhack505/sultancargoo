@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>Sultan Salim Graha</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<style>
+  @keyframes shake {
+      0% {
+          transform: translateX(0);
+      }
+      25% {
+          transform: translateX(-5px);
+      }
+      50% {
+          transform: translateX(5px);
+      }
+      75% {
+          transform: translateX(-5px);
+      }
+      100% {
+          transform: translateX(5px);
+      }
+  }
+  .shake-animation {
+      animation: shake 5s infinite;
+  }
+</style>
+<body>
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center">&nbsp;&nbsp;<a href="mailto:sales@sultancargo.id">sales@sultancargo.id</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+6285361551298</span></i>
+        <div id="google_translate_element" class="container"></div>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logobg.png" alt="">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            <h1 class="logo me-auto">WORLD CONNECTED, BEYOND BORDERS</h1>
+        </marquee>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Galeri</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+      <a href="https://wa.me/6285361551298" target="_blank" class="whatsapp-logo">
+        <img src="assets/img/WhatsApp.png" alt="Chat WhatsApp">
+    </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="cekResiModal" tabindex="-1" role="dialog" aria-labelledby="cekResiModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cekResiModalLabel">Cek Resi Pengiriman</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="nomorResi">Nomor Resi:</label>
+                    <input type="text" class="form-control" id="nomorResi" placeholder="Masukkan nomor resi">
+                </div>
+            </div>
+              <!-- hasil cek resi -->
+            <div class="modal-header">
+              <h5 class="modal-title" id="hasilCekResiModalLabel">Hasil Cek Resi Pengiriman</h5>
+            </div>
+          <div class="modal-body">
+              <div id="hasilCekResi"></div> 
+          </div>
+              <!-- hasil cek resi -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-primary" onclick="cekResi()">Cek Resi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="hasilCekResi"></div>
+
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h2>Koneksi Tanpa Batas Jangkau Perlintasan</h2>
+          <p>Sultancargo hadir sebagai solusi terdepan dalam jasa ekspor dan impor, menyediakan layanan yang andal dan efisien melalui jaringan luas di seluruh dunia, termasuk USA, China, dan India.</p>
+          <p>Kami berdedikasi untuk membantu pedagang dan pemasar memperluas bisnis mereka. So, tunggu apalagi, hubungi kami sekarang juga!</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="https://wa.me/6285361551298" class="bi bi-whatsapp btn-get-started">&nbsp;Whatsapp</a>
+          </div>
+          <br>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#" class="btn-get-started bi bi-cart-check" data-toggle="modal" data-target="#cekResiModal" >&nbsp;&nbsp;Cek Resi</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-out" data-aos-delay="100">
+          <img src="assets/img/hero-img.png" class="img-fluid shake-animation" alt="">
+      </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-geo-alt"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Jangkauan ke Berbagai Negara</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-airplane"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Pengiriman Cepat Multimoda</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-clock-fill"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Dukungan 24/7, Konsultasi Gratis</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-shield-lock-fill"></i></div>
+              <h4 class="title"><a href="" class="stretched-link">Murah, Aman dan Terpercaya</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>ABOUT COMPANY</h2>
+          <p>Kami adalah perusahaan ekspor-impor yang berkomitmen untuk menghadirkan solusi perdagangan internasional yang inovatif dan adaptif. Mulai dari penjemputan hingga pengiriman akhir, kami hadir untuk mengelola seluruh proses logistik bisnis Anda dari Indonesia ke berbagai negara maupun sebaliknya. Tujuan kami sederhana: memberikan solusi bisnis yang memudahkan mitra kami tumbuh di pasar global dengan mudah dan efisien.</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <h3>ONE STOP LOGISTIC SOLUTIONS</h3>
+            <img src="assets/img/about/1.jpg" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Melalui layanan ekspor, kami membantu perusahaan untuk mengirimkan produk ke pasar global dengan menggunakan berbagai jalur transportasi seperti udara, darat, dan laut. Di sisi impor, kami memfasilitasi masuknya barang dari negara lain ke pasar domestik dengan penekanan pada efisiensi proses bea cukai dan layanan yang transparan.</p>
+            <p>Sultancargo bertekad untuk menyediakan solusi logistik yang komprehensif dan andal bagi pelanggan kami, menjembatani segala kebutuhan mereka dalam bisnis ekspor dan impor.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                Kami mengelola proses logistik dari awal hingga akhir, memungkinkan perusahaan untuk menjalankan kegiatan perdagangan lintas batas dengan efisiensi yang tinggi.
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Kemudahan dalam Proses Logistik: Memberikan kesempatan bagi pelanggan untuk fokus pada bisnis inti mereka dengan menyediakan solusi sesuai kebutuhan, mulai dari manajemen dokumen hingga pengiriman barang.
+                </li>
+                <li><i class="bi bi-check-circle-fill"></i> Efisiensi dan Keandalan: Menjamin efisiensi dalam pengiriman barang dengan jaringan agen yang luas dan pengalaman dalam menangani proses ekspor-impor, serta menawarkan layanan yang handal dan responsif.
+                </li>
+                <li><i class="bi bi-check-circle-fill"></i> Jaringan Global: Memiliki jaringan global yang kuat, memungkinkan akses ke banyak negara, memperluas peluang bisnis bagi klien dengan membuka pintu ke pasar internasional.</li>
+              </ul>
+              <p>
+                Kami tidak hanya menawarkan kemudahan dalam pengiriman barang, tetapi juga menyediakan dukungan konsultasi yang mendalam, membantu pelanggan memahami regulasi, dokumentasi, dan proses ekspor-impor yang kompleks.
+              </p>
+
+              <div class="position-relative mt-4">
+                <img src="" class="img-fluid rounded-4" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action" class="call-to-action">
+      <div class="container text-center" data-aos="zoom-out">
+        <iframe width="790" height="470" src="https://www.youtube.com/embed/vXgTvmCYdw0?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= Our Services Section ======= -->
+    <section id="services" class="services sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Sultancargo: Pionir Solusi Terdepan Ekspor-Impor</p>
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>General Trading & Supplier</h3>
+              <p>Menyediakan berbagai macam pasokan komoditas seperti produk pertanian, produk industri, manufaktur, produk perikanan dan kelautan, rempah rempah, kerajinan, furniture dan berbagai produk lainnya.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <h3>International Freight Forwarder</h3>
+              <p>Ocean Freight, Air Freight, Undername Umum, FOB, CNF, CIF, Inland Transport, Perizinan Ekspor / Impor, API U, API P, SNI, PI Besi Baja, PI Mesin Bekas, PI TPT, PI Kehutanan, Warehouse, LCL, FCL, Door to Door.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <h3>Import Door To Door</h3>
+              <p>adalah layanan impor yang lengkap dan praktis. Dengan layanan ini, barang dari luar negeri akan diambil, diurus bea cukai, dan dikirimkan langsung ke alamat Anda tanpa ribet. Memudahkan proses impor barang dengan lebih sederhana dan efisien</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <h3>Undername Import</h3>
+              <p>layanan impor di mana perusahaan atau individu menggunakan perusahaan ekspor/impor lokal sebagai perwakilan resmi untuk mengurus semua proses impor, termasuk bea cukai dan regulasi. Ini memungkinkan impor barang tanpa perlu memiliki izin khusus atau menjadi importir resmi, menjadikan proses impor lebih mudah dan cepat.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <h3>Warehouse</h3>
+              <p>tempat penyimpanan yang digunakan untuk menyimpan berbagai jenis barang, seperti produk jadi, bahan baku, atau material. Gudang berfungsi sebagai tempat untuk mengatur, melindungi, dan mengelola stok barang sebelum mereka didistribusikan atau diproses lebih lanjut. Gudang dapat berlokasi di berbagai lokasi dan dimiliki atau dioperasikan oleh perusahaan, distributor, atau penyedia layanan logistik, dan memiliki peran kunci dalam manajemen persediaan dan rantai pasokan.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <h3>Customs Clearance</h3>
+              <p>proses penting dalam impor dan ekspor barang. Proses ini melibatkan pemenuhan persyaratan bea cukai dan peraturan pemerintah terkait impor atau ekspor barang. Biasanya, proses ini mencakup pengecekan dokumen, perhitungan bea cukai yang harus dibayarkan, dan pemeriksaan fisik barang jika diperlukan. Pembersihan bea cukai diperlukan untuk memastikan barang dapat masuk atau keluar dari suatu negara secara sah sesuai dengan hukum dan peraturan yang berlaku.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Galeri</h2>
+        </div>
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
+
+
+          <div class="row gy-4 portfolio-container">
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk1 (1).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk1 (1).jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Pengemasan via Pesawat</a></h4>
+                  <p>Kami memastikan bahwa produk yang akan dikirim dalam kondisi pengepakan terbaik yang aman dan tidak mudah rusak sekalipun dikirim melalui via udara. Keamanan yang lebih tinggi dan ketergantungan waktu yang lebih baik membuatnya cocok untuk barang-barang dengan tenggat waktu yang ketat, seperti produk-produk yang mudah rusak atau medis.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk1 (2).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk1 (2).jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Kualitas Packing Barang</a></h4>
+                  <p>Nikmati kualitas pengepakan terbaik dari kami salah satunya penggunaan kayu yang menawarkan kekuatan, perlindungan yang baik, dan fleksibilitas dalam pemrosesan dan penyesuaian bentuk sesuai kebutuhan pengiriman barang.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk1 (3).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk1 (3).jpg"   class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Pengiriman via Udara</a></h4>
+                  <p>Pengiriman via udara menawarkan keunggulan kecepatan pengantaran yang tinggi, menghubungkan hampir seluruh dunia, termasuk daerah terpencil, melalui rute pesawat yang luas. Pengiriman via udara memungkinkan pengiriman barang berharga, barang elektronik, produk farmasi, dan barang lain yang memerlukan perawatan khusus.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk2 (1).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk2 (1).jpg"  class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Pengiriman via laut</a></h4>
+                  <p>Pengemasan barang dengan cerdas dalam kontainer dapat memaksimalkan ruang yang tersedia sehingga mengurangi biaya per unit barang dan memastikan barang aman selama perjalanan. Menggunakan bantalan dan pengemasan yang tepat juga dapat mengurangi risiko kerusakan.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk2 (2).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk2 (2).jpg"  class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Sortir Barang Siap Dikirim</a></h4>
+                  <p>Kami memastikan bahwa produk yang keluar dari gudang penyimpanan telah disortir dengan baik dan sesuai sebelum barang siap untuk dikirim. Dengan kemampuan mengirimkan berbagai produk dalam satu pengiriman, kami memastikan pengiriman mulai dari awal hingga akhir menjadi lebih efisien dan terpercaya.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk2 (3).jpg"data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk2 (3).jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Boarding Kapal</a></h4>
+                  <p>Memilih rute pengiriman yang efisien dan efektif serta perusahaan pelayaran yang dapat diandalkan adalah kunci dalam memastikan pengiriman tepat waktu dengan biaya yang lebih ekonomis.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk4 (1).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk4 (1).jpg"  class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Aman sampai ke Negara Tujuan</a></h4>
+                  <p>Setiap barang yang dikirim baik dari dalam ke luar ataupun sebaliknya diberikan perlabelan agar mudah untuk diidentifikasikan sehingga meminimalisir kesalahan barang tidak sampai ke negara tujuan.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk4 (2).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk4 (2).jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Penyusunan Container</a></h4>
+                  <p>Kami menjamin pengaturan optimal kontainer sebelum pemuatan ke kapal tanpa memandang jam kerja. Dengan fokus pada kualitas dan kecepatan pengiriman, kami menjamin peningkatan efisiensi dalam pengemasan yang terorganisir.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/1.jpg"data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/1.jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Penerimaan Barang dari Customer</a></h4>
+                  <p>Setiap barang yang diterima dari pelanggan kami teliti diperiksa untuk memastikan kesesuaian dengan spesifikasi awal, menjamin kepercayaan pada kualitas yang terjaga.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-product">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/2.jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/2.jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Intermodal Transportation </a></h4>
+                  <p>Kami mengintegrasikan beragam jenis transportasi dalam perjalanan pengiriman, dari darat, laut, hingga udara, dengan prosedur yang teruji dan terpercaya. Hasilnya: barang Anda tiba dengan aman dan tepat waktu.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (3) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (3) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Break Bulk</a></h4>
+                  <p>Kami menghadirkan layanan pembongkaran kargo besar ke kargo yang lebih efisien untuk distribusi lanjutan. Setiap barang kami bongkar dari ukuran besar, kami perbarui pengepakan agar lebih efisien dan aman, serta dilacak dengan ketelitian pada setiap langkahnya.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk4 (3).jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk4 (3).jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Pengepakan Ulang</a></h4>
+                  <p>Kami melaksanakan proses repacking yang cermat untuk setiap barang yang telah diterima dari pelanggan, memastikan keamanan dan keteraturan muatan sesuai jenisnya, sehingga pengiriman berlangsung tertata dan sesuai dengan standar muatan aslinya.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (4) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (4) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Just-In-Time (JIT)</a></h4>
+                  <p>Proses ini dilakukan pada hari yang sama setelah penerimaan barang, menghindari penambahan biaya tersembunyi dan menjaga keterjangkauan biaya pengiriman.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (5) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (5) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Cross Docking</a></h4>
+                  <p>Kami menawarkan transfer langsung barang dari satu kendaraan ke kendaraan lain tanpa penundaan berlebih, mengkhususkan langkah-langkahnya sesuai jenis barang seperti besi baja. </p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (6) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (6) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Kustomisasi dan Penyesuaian</a></h4>
+                  <p>Kami menerapkan pendekatan operasional yang mengutamakan pengiriman sesuai permintaan, mengurangi persediaan dalam penyimpanan dan meningkatkan efisiensi.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (7) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (7) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Customs Brokerage and Consolidation</a></h4>
+                  <p>Kami menjamin penataan barang yang optimal untuk mengoptimalkan efisiensi pengiriman. Dengan konsolidasi pengiriman ke kontainer tunggal, ditambah layanan pembersihan bea cukai, kami memastikan kepatuhan penuh terhadap peraturan dan dokumen yang diperlukan.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (8) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (8) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Live Tracking</a></h4>
+                  <p>Kami menawarkan sistem pelacakan yang canggih untuk memantau setiap barang secara real-time, dari proses pemuatan dalam container hingga tiba di tujuan akhir. Jaminan penyelesaian yang terdokumentasi dari awal hingga akhir distribusi, memastikan keberhasilan pengiriman.</p>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            <div class="col-xl-4 col-md-6 portfolio-item filter-books">
+              <div class="portfolio-wrap">
+                <a href="assets/img/galeri/uk 5 (9) .jpg" data-gallery="portfolio-gallery-app" class="glightbox"><img src="assets/img/galeri/uk 5 (9) .jpg" class="img-fluid" alt=""></a>
+                <div class="portfolio-info">
+                  <h4><a href="portfolio-details.html" title="More Details">Last-Mile Delivery</a></h4>
+                  <p>Dengan fokus pada kesempurnaan pengiriman hingga tahap akhir perjalanan ke tangan penerima barang akhir, kami menawarkan jaringan logistik terkini untuk memastikan pengiriman tepat waktu yang mulus dan memuaskan. Kami secara aktif memperbarui status pengiriman, memberikan kepastian dalam setiap langkah perjalanan barang.</p>
+                </div>
+              </div>
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="content px-xl-5">
+              <h3>Frequently Asked <strong>Questions</strong></h3>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+
+            <div class="accordion accordion-flush" id="faqlist" data-aos="fade-up" data-aos-delay="100">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                    <span class="num">1.</span>
+                    Apa itu Jasa Pengiriman Internasional?
+                  </button>
+                </h3>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Jasa Pengiriman Internasional adalah layanan yang memungkinkan ekspor dan impor barang antara negara-negara yang berbeda. Ini mencakup pengiriman, penanganan bea cukai, dan logistik yang diperlukan untuk mengirim barang dari satu negara ke negara lain.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                    <span class="num">2.</span>
+                    Apa perbedaan antara Ekspor dan Impor?
+                  </button>
+                </h3>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Ekspor adalah pengiriman barang ke luar negeri dari negara asal, sedangkan impor adalah penerimaan barang dari luar negeri ke negara tujuan.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                    <span class="num">3.</span>
+                    Apa yang termasuk dalam layanan pengiriman internasional?
+                  </button>
+                </h3>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Layanan pengiriman internasional mencakup pengambilan barang, pengemasan, transportasi, pemrosesan bea cukai, serta pengiriman barang ke tujuan akhir.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
+                    <span class="num">4.</span>
+                    Berapa lama waktu yang diperlukan untuk pengiriman internasional?
+                  </button>
+                </h3>
+                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Waktu pengiriman dapat bervariasi tergantung pada jarak, moda transportasi, dan layanan yang Anda pilih. Biasanya, waktu pengiriman berkisar dari beberapa hari hingga beberapa minggu.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
+                    <span class="num">5.</span>
+                    Apa saja biaya yang terkait dengan jasa pengiriman internasional?
+                  </button>
+                </h3>
+                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
+                  <div class="accordion-body">
+                    Biaya yang terkait meliputi biaya pengiriman, biaya pemrosesan bea cukai, asuransi, dan biaya tambahan terkait logistik.
+                  </div>
+                </div>
+              </div><!-- # Faq item-->
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <hr color="black" size="4" width="100%">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p>Hubungi kami untuk keterangan lebih lanjut.</p>
+        </div>
+
+        <div class="row gx-lg-0 gy-4">
+
+          <div class="col-lg-4">
+
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex">
+                <a href="https://www.google.com/maps/d/embed?mid=1S7bJbasoHEzLZ-gnLvM1E5UP7gEtf3E&ehbc=2E312F">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+              </a>
+                <div>
+                  <h4>Location:</h4>
+                  <p>Ruko golden Boulevard Blok S No. 08 Jl Pahlawan Seribu Kel. Lengkong Karya Kec. Serpong Utara - Tangerang Selatan 15310</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <a href="mailto:sales@sultancargo.id">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+              </a>
+                <div>
+                  <h4>Email:</h4>
+                  <p>sales@sultancargo.id</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <a href="tel:+62 853-6155-1298"> <!-- Ganti nomor telepon dengan nomor yang sesuai -->
+                  <i class="bi bi-phone flex-shrink-0"></i>
+              </a>
+                <div>
+                  <h4>Call:</h4>
+                  <p>+62 853-6155-1298</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h4>Open Hours:</h4>
+                  <p>24 Hours</p>
+                </div>
+              </div><!-- End Info Item -->
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section>
+    <style>
+      /* Menentukan lebar dan tinggi iframe */
+      #map {
+          width: 100%;
+          height: 400px;
+      }
+  </style>
+    <iframe
+        id="map"
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/d/embed?mid=1S7bJbasoHEzLZ-gnLvM1E5UP7gEtf3E&ehbc=2E312F">
+    </iframe>
+
+  </main><!-- End #main -->
+  
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div id="google_translate_element" class="container"></div>
+    
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">General Trading & Supplier</a></li>
+            <li><a href="#">International Freight Forwarder</a></li>
+            <li><a href="#">Import Door To Door</a></li>
+            <li><a href="#">Undername Import</a></li>
+            <li><a href="#">Warehouse</a></li>
+            <li><a href="#">Customs Clearance</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>PT SULTAN SALIM GRAHA</h4>
+          <p>
+            Ruko Golden Boulevard Blok S <br>
+            No. 08 Jl Pahlawan Seribu<br>
+            Kel. Lengkong Karya Kec. Serpong Utara - Tangerang Selatan 15310 <br><br>
+            <strong>Phone:</strong> +62 853-6155-1298<br>
+            <strong>Email:</strong> sales@sultancargo.id<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container mt-4">
+      <div class="credits">
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script>
+    // Tambahkan kelas "show" setelah beberapa saat (misalnya, 2 detik) untuk memunculkan logo dengan animasi
+    setTimeout(function() {
+        document.querySelector(".whatsapp-logo").classList.add("show");
+    }, 600);
+</script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    function cekResi() {
+        var nomorResi = document.getElementById("nomorResi").value;
+        var hasilCekResi = document.getElementById("hasilCekResi");
+        hasilCekResi.innerHTML = " " + nomorResi + " sedang dalam proses pengiriman.";
+        $('#hasilCekResiModal').modal('show');
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="path-to-i18next.min.js"></script>
+  <script src="path-to-i18next-http-backend.min.js"></script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+      );
+    }
+  </script>
+</body>
+</html>
